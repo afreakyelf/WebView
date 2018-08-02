@@ -25,16 +25,17 @@ public class webView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
         back = findViewById(R.id.back);
-        webView = findViewById(R.id.webview);
-        webView.setWebViewClient(new myclient());    //to open any link inside webview only
-        progressBar = findViewById(R.id.progress);
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
+
+
+        webView = findViewById(R.id.webview);
+        webView.setWebViewClient(new myclient());    //to open any link inside webview only
+        progressBar = findViewById(R.id.progress);
 
         String geturl = getIntent().getStringExtra("url");
         loadurl(geturl);
