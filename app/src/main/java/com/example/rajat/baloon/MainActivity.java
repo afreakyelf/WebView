@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         button = findViewById(R.id.search);
         editText = findViewById(R.id.et);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -9,6 +9,7 @@
 
     <WebView
         android:layout_width="match_parent"
+        android:layout_above="@id/back"
         android:layout_height="match_parent"
         android:id="@+id/webview"/>
 
@@ -20,5 +21,12 @@
         android:visibility="visible"
         android:id="@+id/progress"
         android:layout_centerInParent="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/back"
+        android:text="Go back"/>
 
 </RelativeLayout>

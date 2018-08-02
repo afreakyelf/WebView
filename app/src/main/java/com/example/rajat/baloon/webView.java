@@ -2,6 +2,7 @@ package com.example.rajat.baloon;
 
 import android.app.ProgressDialog;
 import android.app.SearchManager;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,21 +11,30 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.ProgressBar;
 
 public class webView extends AppCompatActivity {
 
     WebView webView;
+    Button back;
     ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
-
+        back = findViewById(R.id.back);
         webView = findViewById(R.id.webview);
         webView.setWebViewClient(new myclient());    //to open any link inside webview only
         progressBar = findViewById(R.id.progress);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
 
         String geturl = getIntent().getStringExtra("url");
         loadurl(geturl);
